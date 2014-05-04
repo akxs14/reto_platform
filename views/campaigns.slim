@@ -8,6 +8,7 @@ html class="no-js" lang="en"
 
     link rel="stylesheet" type="text/css" href="stylesheets/foundation.min.css"
     link rel="stylesheet" type="text/css" href="stylesheets/normalize.css"
+    link rel="stylesheet" type="text/css" href="stylesheets/c3.css"
     link rel="stylesheet" type="text/css" href="stylesheets/application.css"
 
     script src="javascripts/vendor/modernizr.js"
@@ -34,28 +35,56 @@ html class="no-js" lang="en"
       li Link 3
 
     div id="content"
+      / campaign overview
       div class="row"
         div class="small-3 columns"
-          p
+          h4
             b Campaign:
             span Test1
         div class="small-3 columns"
-          p
+          h4
             b Status:
             span Active
         div class="small-3 columns"
-          p
+          h4
             b Start:
             span 01/06/2014
         div class="small-3 columns"
-          p
+          h4
             b End:
             span 30/06/2014
-        hr
+
+      / campaign delivery plots
+      div class="row"
+        div class="small-6 columns"
+          p class="header" Overall Campaign Delivery
+        div class="small-6 columns"
+          p class="header" Yesterday Campaign Delivery
+
+      div class="row"
+        div class="small-6 columns"
+          div id="overall_delivery_chart" class="graph"
+        div class="small-6 columns"
+          div id="yesterday_delivery_chart" class="graph"
+
+      div class="row"
+        div class="small-6 columns"
+          p class="header" Today Campaign Delivery
+        div class="small-6 columns"
+          p class="header" Today Budget Expedition
+
+      div class="row"
+        div class="small-6 columns"
+          div id="today_delivery_chart" class="graph"
+        div class="small-6 columns"
+          div id="budget_chart" class="graph"
+
 
     script src="javascripts/vendor/jquery.js"
-    script src="javascripts/foundation.min.js"
+    script src="javascripts/vendor/foundation.min.js"
+    script src="javascripts/vendor/d3.min.js"
+    script src="javascripts/vendor/c3.js"
+    script src="javascripts/application.js"
 
     javascript:
       $(document).foundation();
-

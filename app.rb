@@ -11,8 +11,8 @@ get '/campaigns' do
   slim :campaigns
 end
 
-get '/javascripts/applications.js' do
-  coffee :application
-end
+# get '/javascripts/applications.js' do
+#   coffee :application
+# end
 
 
