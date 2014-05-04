@@ -8,12 +8,37 @@ html class="no-js" lang="en"
 
     link rel="stylesheet" type="text/css" href="stylesheets/foundation.min.css"
     link rel="stylesheet" type="text/css" href="stylesheets/normalize.css"
+    link rel="stylesheet" type="text/css" href="stylesheets/application.css"
 
     script src="javascripts/vendor/modernizr.js"
 
   body
-    h1 Hello!
+    / navigation bar
+    nav class="top-bar"
+      ul class="title-area"
+        li class="name"
+          h1
+            a href="#" reto
 
+      section class="top-bar-section"
+        ul class="right"
+          li
+            a href="/campaign/new" New Campaign
+          li
+            a href="/signout" Sign out
+
+    / side bar showing the user's campaigns
+    ul id="campaign-list"
+      li Link 1
+      li Link 2
+      li Link 3
+
+    div id="content"
+      div class="row"
+        div class="small-6 columns"
+          span bla bla bla
+        div class="small-6 columns"
+          span bla bla bla
 
     script src="javascripts/vendor/jquery.js"
     script src="javascripts/foundation.min.js"

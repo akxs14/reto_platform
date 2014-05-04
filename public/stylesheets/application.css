@@ -1,0 +1,22 @@
+
+body {
+  background-color: #59BEDF;
+  color: white;
+}
+
+#campaign-list {
+  width: 15%;
+  border: 1px solid white;
+  float:left;
+  margin: 0;
+}
+
+#campaign-list li {
+  list-style: none;
+}
+
+#content {
+  width: 85%;
+  float: right;
+  border: 1px solid white;
+}
