@@ -1,0 +1,62 @@
+doctype html
+html data-ng-app=""
+  head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+    title reto.io | campaigns overview
+
+    link rel="stylesheet" type="text/css" href="stylesheets/foundation.min.css"
+    link rel="stylesheet" type="text/css" href="stylesheets/application.css"
+
+  body
+
+    br
+    div class="container row" ng-controller="NameController"
+      div class="small-3 columns"
+        h3 Something:
+      div class="small-3 columns"
+        input type="text" ng-model="something"
+      div class="small-2 columns"
+        p
+          |
+            {{something}}
+      div class="small-4 columns"
+        ul
+          li ng-repeat="name in names"
+            |
+              {{name}}
+
+    br
+    div class="container row" ng-controller="SimpleController"
+      div class="small-3 columns"
+        h3 Customer:
+      div class="small-3 columns"
+        input type="text" ng-model="name"
+      div class="small-4 columns"
+        ul
+          li ng-repeat="customer in customers | filter:name"
+            |
+              {{customer.name}} - {{customer.city}}
+
+    script src="scripts/vendor/jquery.js"
+    script src="scripts/vendor/angular.js"
+    script src="scripts/vendor/foundation.min.js"
+
+    javascript:
+      $(document).foundation();
+
+      function SimpleController($scope) {
+        $scope.customers = [
+          {name: 'Dave Jones', city: 'Phoenix'},
+          {name: 'Jamie Riley', city: 'Atlanta'},
+          {name: 'Heedy Whahlin', city: 'Chandler'},
+          {name: 'Thomas Winter', city: 'Seattle'}
+        ];
+      }
+
+      function NameController($scope) {
+        $scope.names=['Dave', 'Napur', 'Heedy', 'Shriva'];
+      }
+
+
