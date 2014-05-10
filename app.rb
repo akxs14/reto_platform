@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require 'rubygems'
+require 'json'
 require 'sinatra'
 require 'slim'
 require 'data_mapper'
@@ -29,9 +30,8 @@ get '/angular2' do
   slim :angular2
 end
 
-get '/campaigns/user/:id' do
-  puts "!!!!!!!!!!!!"
-  campaign = Campaign.get(params[:id].to_i)
-  "ok - #{params[:id].to_i} - #{campaign.inspect}"
+get '/user/:id/campaigns' do
+  campaigns = Campaign.all(:status => 'active').to_a
+  campaigns.to_json
 end
 
