@@ -1,0 +1,40 @@
+doctype html
+html ng-app=''
+  head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+    title reto.io | campaigns overview
+
+    link rel="stylesheet" type="text/css" href="stylesheets/foundation.min.css"
+    link rel="stylesheet" type="text/css" href="stylesheets/application.css"
+
+  body
+
+    div class="container row" ng-controller="SimpleController"
+      div class="small-2 columns"
+        h3 Name:
+      div class="small-4 columns"
+        input type="text" ng-model="name"
+      div class="small-6 columns"
+        ul
+          li ng-repeat="customer in customers | filter:name"
+            |
+              {{customer}}
+
+    script src="scripts/vendor/jquery.js"
+    script src="scripts/vendor/angular.js"
+    script src="scripts/vendor/foundation.min.js"
+
+    javascript:
+      $(document).foundation();
+
+      function SimpleController($scope) {
+        $scope.customers = [
+          {name: 'Dave Jones', city: 'Phoenix'},
+          {name: 'Jamie Riley', city: 'Atlanta'},
+          {name: 'Heedy Wahlin', city: 'Chandler'},
+          {name: 'Thomas Winter', city: 'Seattle'}
+        ];
+      };
+

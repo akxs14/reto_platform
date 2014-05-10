@@ -5,6 +5,7 @@ gem 'sinatra'
 gem 'data_objects'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
+gem 'pg'
 
 gem 'slim'
 

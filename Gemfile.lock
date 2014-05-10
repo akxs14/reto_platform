@@ -63,6 +63,7 @@ GEM
     json_pure (1.8.1)
     libv8 (3.16.14.3)
     multi_json (1.9.3)
+    pg (0.17.1)
     rack (1.5.2)
     sinatra (1.0)
       rack (>= 1.0)
@@ -83,5 +84,6 @@ DEPENDENCIES
   data_objects
   dm-postgres-adapter
   libv8
+  pg
   sinatra
   slim
