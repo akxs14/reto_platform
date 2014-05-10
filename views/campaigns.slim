@@ -13,7 +13,7 @@ html class="no-js" lang="en"
 
     script src="scripts/vendor/modernizr.js"
 
-  body
+  body ng-app=""
     / navigation bar
     nav class="top-bar"
       ul class="title-area"
@@ -29,7 +29,7 @@ html class="no-js" lang="en"
             a href="/signout" Sign out
 
     / side bar showing the user's campaigns
-    ul id="campaign-list"
+    ul id="campaign-list" ng-controller="CampaignListController"
       li Link 1
       li Link 2
       li Link 3

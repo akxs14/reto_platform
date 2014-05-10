@@ -31,7 +31,7 @@ get '/angular2' do
 end
 
 get '/user/:id/campaigns' do
-  campaigns = Campaign.all(:status => 'active').to_a
+  campaigns = Campaign.all(:user_id => params[:id].to_i).to_a
   campaigns.to_json
 end
 
