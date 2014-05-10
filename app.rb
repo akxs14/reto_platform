@@ -4,7 +4,9 @@ require 'sinatra'
 require 'slim'
 require 'data_mapper'
 
-DataMapper.setup(:default, 'postgres://localhost/app')
+require_relative 'lib/models'
+
+DataMapper.setup(:default, 'postgres://angelos:akxs14@localhost/angelos')
 DataMapper.finalize.auto_upgrade!
 
 get '/' do
@@ -29,5 +31,7 @@ end
 
 get '/campaigns/user/:id' do
   puts "!!!!!!!!!!!!"
-  "ok - #{params[:id]}"
+  campaign = Campaign.get(params[:id].to_i)
+  "ok - #{params[:id].to_i} - #{campaign.inspect}"
 end
+
