@@ -51,3 +51,20 @@ setTimeout (->
   todayChart.load columns: [ [ "Clicks", 400, 500, 450, 700, 600, 500 ] ]
 ), 1000
 
+app = angular.module('retoApp',['ngRoute'])
+
+app.controller('CampaignListController', ($scope, $http) ->
+  $http.get('http://localhost:4567/user/1/campaigns').
+  success( (data) ->
+    $scope.campaigns = data
+    $scope.selected_campaign = data[0]
+  )
+)
+
+
+
+
+
+
+
+

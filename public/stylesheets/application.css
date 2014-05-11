@@ -11,7 +11,7 @@ h4 {
 #campaign-list {
   width: 15%;
   height: 94%;
-  border: 1px solid white;
+  border-right: 1px solid white;
 
   float:left;
   margin: 0;
@@ -35,3 +35,27 @@ h4 {
 .graph {
   height: 230px;
 }
+
+.campaign_list_item {
+  font-size: 0.9em;
+  border-bottom: 2px solid #eee;
+  color: black;
+}
+
+.campaign_list_item a {
+
+}
+
+.active {
+  color: green;
+}
+
+.planned {
+  color: blue;
+}
+
+.campaign_span {
+  font-size: 0.7em;
+}
+
+

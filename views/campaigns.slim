@@ -13,7 +13,7 @@ html class="no-js" lang="en"
 
     script src="scripts/vendor/modernizr.js"
 
-  body ng-app=""
+  body data-ng-app="retoApp"
     / navigation bar
     nav class="top-bar"
       ul class="title-area"
@@ -28,63 +28,73 @@ html class="no-js" lang="en"
           li
             a href="/signout" Sign out
 
-    / side bar showing the user's campaigns
-    ul id="campaign-list" ng-controller="CampaignListController"
-      li Link 1
-      li Link 2
-      li Link 3
+    div data-ng-controller="CampaignListController"
+      / side bar showing the user's campaigns
+      ul id="campaign-list"
+        div class="campaign_list_item" ng-repeat="campaign in campaigns"
+          a href="/campaign/:id"
+            span Campaign:
+            b
+              | {{campaign.title}}
+            br
+            span Status:
+            span class="active"
+              | {{campaign.status}}
+            br
+            span class="campaign_span"
+              | {{campaign.start_date}} - {{campaign.end_date}}
 
-    div id="content"
-      / campaign overview
-      div class="row"
-        div class="small-3 columns"
-          h4
-            b Campaign:
-            span Test1
-        div class="small-3 columns"
-          h4
-            b Status:
-            span Active
-        div class="small-3 columns"
-          h4
-            b Start:
-            span 01/06/2014
-        div class="small-3 columns"
-          h4
-            b End:
-            span 30/06/2014
+      div id="content"
+        / campaign overview
+        div class="row"
+          div class="small-3 columns"
+            p
+              b Campaign:
+              | {{selected_campaign.title}}
+          div class="small-3 columns"
+            p
+              b Status:
+              | {{selected_campaign.status}}
+          div class="small-3 columns"
+            p
+              b Start:
+              | {{selected_campaign.start_date}}
+          div class="small-3 columns"
+            p
+              b End:
+              | {{selected_campaign.end_date}}
 
-      / campaign delivery plots
-      div class="row"
-        div class="small-6 columns"
-          p class="header" Overall Campaign Delivery
-        div class="small-6 columns"
-          p class="header" Yesterday Campaign Delivery
-      div class="row"
-        div class="small-6 columns"
-          div id="overall_delivery_chart" class="graph"
-        div class="small-6 columns"
-          div id="yesterday_delivery_chart" class="graph"
+        / campaign delivery plots
+        div class="row"
+          div class="small-6 columns"
+            p class="header" Overall Campaign Delivery
+          div class="small-6 columns"
+            p class="header" Yesterday Campaign Delivery
+        div class="row"
+          div class="small-6 columns"
+            div id="overall_delivery_chart" class="graph"
+          div class="small-6 columns"
+            div id="yesterday_delivery_chart" class="graph"
 
-      div class="row"
-        div class="small-6 columns"
-          p class="header" Today Campaign Delivery
-        div class="small-6 columns"
-          p class="header" Today Budget Expedition
+        div class="row"
+          div class="small-6 columns"
+            p class="header" Today Campaign Delivery
+          div class="small-6 columns"
+            p class="header" Today Budget Expedition
 
-      div class="row"
-        div class="small-6 columns"
-          div id="today_delivery_chart" class="graph"
-        div class="small-6 columns"
-          div id="budget_chart" class="graph"
+        div class="row"
+          div class="small-6 columns"
+            div id="today_delivery_chart" class="graph"
+          div class="small-6 columns"
+            div id="budget_chart" class="graph"
 
 
     script src="scripts/vendor/jquery.js"
-    script src="scripts/vendor/angular.min.js"
     script src="scripts/vendor/foundation.min.js"
     script src="scripts/vendor/d3.min.js"
     script src="scripts/vendor/c3.js"
     script src="scripts/vendor/angular.min.js"
+    script src="scripts/vendor/angular-route.min.js"
     script src="scripts/app.js"
 
     javascript:
